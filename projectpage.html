@@ -409,6 +409,44 @@
             </div>
 
         </section>
+
+        <!-- Back to Top Button -->
+            <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m18 15-6-6-6 6"></path>
+                </svg>
+            </button>
+        <script>
+            const backToTopButton = document.getElementById("backToTop");
+
+            // Show button after scrolling down
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            });
+
+            // Smoothly scroll to the top
+            backToTopButton.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        </script>
     </body>
 
 

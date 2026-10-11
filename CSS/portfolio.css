@@ -58,61 +58,442 @@ h1{
 }
 
 
-/* Main Content */
+
+/* ==============================
+   HOMEPAGE HERO
+================================ */
+
 .main-content {
-  display: flex;
-  align-items: center;      /* vertically aligns text + photo */
-  justify-content: space-between;
-  gap: 40px;                /* space between text & photo */
-  padding: 60px 80px;
-}
-.main-text {
-    width: 50%;
-    text-align: left;
+    width: min(1180px, 90%);
+    min-height: 620px;
+    margin: 0 auto;
+    padding: 75px 0 65px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
-    padding: 0 20px;
-    margin-top: 100px;
-    justify-content: space-between;
-    
+    gap: 75px;
+
+    background: #ffffff;
+    color: #171717;
 }
 
-/* View Projects Button */
-.btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  background-color: #333;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  display: inline-block;
+/* LEFT CONTENT */
+
+.main-text {
+    width: 100%;
+    max-width: 650px;
 }
 
-.btn-link {
-  color: #fff;
-  text-decoration: none;
+.content-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-.btn:hover {
-  background: rgb(241, 210, 13);
-  border: none;
-  outline: none;
-  box-shadow: none;
+.content-name::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #2563eb;
 }
 
-/* Hero Image */
+.main-text h1 {
+    margin: 0 0 24px;
+
+    color: rgb(241, 210, 13);
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 750;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+}
+
+.main-text h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.hero-description {
+    max-width: 570px;
+    margin: 0 0 30px;
+
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-bottom: 38px;
+}
+
+.hero-buttons .btn {
+    min-height: 50px;
+    padding: 0 21px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid #111111;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    background-color: rgb(241, 210, 13);
+    border-color: rgb(241, 210, 13);
+    color: #fff;
+}
+
+.btn-primary {
+    background: #111111;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: rgb(241, 210, 13);
+    border-color: rgb(241, 210, 13);
+    color: #ffffff;
+}
+
+.btn-primary span {
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.btn-primary:hover span {
+    transform: translate(3px, -3px);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #111111;
+}
+
+.btn-secondary:hover {
+    background: #f3f4f6;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+/* SKILL TAGS */
+
+.hero-skills {
+    padding-top: 23px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.skills-label {
+    margin: 0 0 13px;
+
+    color: #777777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skill-tags span {
+    padding: 9px 12px;
+
+    background: #f4f6f8;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+
+    color: #333333;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==============================
+   RIGHT SIDE: PHOTO
+================================ */
+
 .hero-photo {
-  width: 50%; /* takes other half */
-  display: flex;
-  justify-content: flex-end; /* ensures photo stays on the RIGHT */
-    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 410px;
+    justify-self: end;
 }
 
-.hero-photo img {
-  width: 100%;      
-  max-width: 400px; 
-  border-radius: 10px;
-  object-fit: cover;
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 4.5;
 }
+
+.photo-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 12px;
+    background: #f3f4f6;
+}
+
+
+.badge-dot {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+
+    background: #2563eb;
+    border-radius: 50%;
+}
+
+/* QA FOCUS CARD */
+
+.qa-focus-card {
+    position: relative;
+    width: 88%;
+    margin: -20px 0 0 auto;
+    padding: 22px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.qa-focus-card h3 {
+    margin: 0 0 17px;
+
+    color: #111111;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.focus-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    margin-top: 13px;
+
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.focus-icon {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+    border-radius: 50%;
+
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ==============================
+   EXPERIENCE HIGHLIGHTS
+================================ */
+
+.hero-highlights {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    padding: 28px 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.highlight-item {
+    padding-left: 24px;
+    border-left: 2px solid #2563eb;
+}
+
+.highlight-item h2 {
+    margin: 0 0 7px;
+
+    color: #111111;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.highlight-item p {
+    margin: 0;
+
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+    .main-content {
+        min-height: auto;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 35px;
+        padding: 65px 0;
+    }
+
+    .main-text h1 {
+        font-size: clamp(38px, 5vw, 50px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+
+    .qa-focus-card {
+        width: 94%;
+        padding: 18px;
+    }
+
+    .highlight-item {
+        padding-left: 15px;
+    }
+
+    .highlight-item h2 {
+        font-size: 16px;
+    }
+}
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+    .main-content {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding: 45px 0 40px;
+    }
+
+    .content-name {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .main-text h1 {
+        font-size: clamp(40px, 11vw, 54px);
+        line-height: 1.1;
+        letter-spacing: -1.8px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons .btn {
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    .skill-tags {
+        gap: 8px;
+    }
+
+    .skill-tags span {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .hero-photo {
+        width: 88%;
+        max-width: 360px;
+        justify-self: center;
+    }
+
+    .photo-wrapper {
+        aspect-ratio: 4 / 4.5;
+    }
+
+
+    .qa-focus-card {
+        width: 92%;
+        margin-top: -15px;
+        padding: 19px;
+    }
+
+    .hero-highlights {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 0 40px;
+    }
+
+    .highlight-item {
+        padding: 0 0 0 16px;
+    }
+
+    .highlight-item h2 {
+        font-size: 18px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-buttons .btn,
+    .btn-primary span {
+        transition: none;
+    }
+}
+
 
 /* #################### - PROJECTS PAGE - ###################### */
 .project-main {
@@ -680,7 +1061,7 @@ html {
 }
 
 .project-nav a:hover {
-    background-color: #333;
+    background-color: rgb(241, 210, 13);
     color: white;
 }
 
@@ -742,7 +1123,7 @@ html {
     display: inline-block;
     padding: 12px 22px;
     border-radius: 8px;
-    background: #2563eb;
+    background: #000;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -750,7 +1131,7 @@ html {
 }
 
 .evidence-btn:hover {
-    background: #1d4ed8;
+    background: rgb(241, 210, 13);
     transform: translateY(-2px);
 }
 
@@ -1284,5 +1665,72 @@ html {
 
     .qa-metrics {
         grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+
+    cursor: pointer;
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Show button */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hover animation */
+.back-to-top:hover {
+    background-color: rgb(241, 210, 13);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyboard accessibility */
+.back-to-top:focus-visible {
+    outline: 3px solid #777777;
+    outline-offset: 4px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        right: 20px;
     }
 }
